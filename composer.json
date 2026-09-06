@@ -1,0 +1,13 @@
+{
+    "name": "emanuele-demos/challenge-app-mvc",
+    "description": "Simple MVC Framework for Challenge App",
+    "type": "project",
+    "autoload": {
+        "psr-4": {
+            "App\\": "app/"
+        }
+    },
+    "require": {
+        "php": ">=8.0"
+    }
+}
