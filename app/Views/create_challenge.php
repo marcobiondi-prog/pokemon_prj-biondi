@@ -23,7 +23,7 @@
         <div class="challenge-form">
             <h2>Crea una Nuova Challenge</h2>
 
-            <form method="POST" action="/pokemon/lan_challenge-/public/?url=challenges/store" class="form">
+            <form method="POST" action="?url=challenges/store" class="form">
                 <div class="form-group">
                     <label for="title">Titolo</label>
                     <input type="text" id="title" name="title" required class="form-control" placeholder="Es. Chi è il più veloce?">
