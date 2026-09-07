@@ -66,7 +66,7 @@ class Router
     {
         [$controller, $method] = explode('@', $handler);
 
-        $controllerFile = __DIR__ . "/../app/Controllers/{$controller}.php";
+        $controllerFile = __DIR__ . "/../Controllers/{$controller}.php";
 
         if (!file_exists($controllerFile)) {
             http_response_code(500);

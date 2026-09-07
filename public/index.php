@@ -10,7 +10,7 @@ spl_autoload_register(function ($class) {
 });
 
 require_once __DIR__ . '/../app/functions.php';
-require_once __DIR__ . '/../app/Controllers/AuthHelpers.php';
+require_once __DIR__ . '/../Controllers/AuthHelpers.php';
 
 use Core\Router;
 

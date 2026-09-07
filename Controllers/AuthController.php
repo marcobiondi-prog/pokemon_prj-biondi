@@ -27,7 +27,7 @@ class AuthController
 
     public function __construct()
     {
-        $this->usersFile = __DIR__ . '/../../users.json';
+        $this->usersFile = __DIR__ . '/../users.json';
         $this->loadUsers();
     }
 
