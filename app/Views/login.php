@@ -4,12 +4,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login - Challenge App</title>
-    <link rel="stylesheet" href="/pokemon/lan_challenge-/public/assets/css/style.css">
+    <link rel="stylesheet" href="/pokemon/lan_challenge-/assets/css/style.css?v=8">
 </head>
 <body>
     <nav class="navbar">
         <div class="container">
-            <h1 class="navbar-brand">Challenge App</h1>
+            <a href="/pokemon/lan_challenge-/public/"><img src="/pokemon/lan_challenge-/assets/img/logo.png" alt="Challenge App" class="navbar-brand"></a>
             <ul class="nav-menu">
                 <li><a href="/pokemon/lan_challenge-/public/?url=login">Login</a></li>
                 <li><a href="/pokemon/lan_challenge-/public/?url=register">Register</a></li>
@@ -20,7 +20,7 @@
     <main class="container">
         <div class="auth-container">
             <div class="auth-card">
-                <h2>Bentornato</h2>
+                <h2>Benvenuto nella challenger dei Pokemon</h2>
 
                 <?php if (isset($_GET['registered']) && $_GET['registered'] == '1'): ?>
                     <div class="alert alert-success">

@@ -4,12 +4,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Registrazione - Challenge App</title>
-    <link rel="stylesheet" href="/pokemon/lan_challenge-/public/assets/css/style.css">
+    <link rel="stylesheet" href="/pokemon/lan_challenge-/assets/css/style.css?v=8">
 </head>
 <body>
     <nav class="navbar">
         <div class="container">
-            <h1 class="navbar-brand">Challenge App</h1>
+            <a href="/pokemon/lan_challenge-/public/"><img src="/pokemon/lan_challenge-/assets/img/logo.png?v=1" alt="Challenge App" class="navbar-brand"></a>
             <ul class="nav-menu">
                 <li><a href="/pokemon/lan_challenge-/public/?url=login">Login</a></li>
                 <li><a href="/pokemon/lan_challenge-/public/?url=register">Register</a></li>

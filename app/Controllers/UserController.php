@@ -2,16 +2,6 @@
 
 namespace App\Controllers;
 
-function isLoggedIn(): bool
-{
-    return isset($_SESSION['user_id']);
-}
-
-function getCurrentUser()
-{
-    return $_SESSION['user'] ?? null;
-}
-
 class UserController
 {
     public function profile()
@@ -40,11 +30,25 @@ class UserController
             }
 
             if (empty($errors)) {
-                // Aggiorna la sessione
-                $_SESSION['user']['name'] = $nome;
-                $_SESSION['user']['cognome'] = $cognome;
-                $_SESSION['user']['email'] = $email;
-                $_SESSION['user']['telefono'] = $telefono;
+                foreach (getAllUsersData() as $existingUser) {
+                    if ((int) $existingUser['id'] !== (int) $user['id'] && strtolower($existingUser['email']) === strtolower($email)) {
+                        $errors[] = 'Questa email è già associata a un altro account';
+                        break;
+                    }
+                }
+            }
+
+            if (empty($errors)) {
+                $changes = [
+                    'name' => $nome,
+                    'cognome' => $cognome,
+                    'email' => $email,
+                    'telefono' => $telefono,
+                ];
+
+                updateUserInStorage((int) $user['id'], $changes);
+
+                $_SESSION['user'] = array_merge($_SESSION['user'], $changes);
 
                 $success = true;
                 $user = getCurrentUser();

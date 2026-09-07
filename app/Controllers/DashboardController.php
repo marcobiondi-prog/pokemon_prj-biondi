@@ -12,20 +12,7 @@ class DashboardController
         }
 
         $user = getCurrentUser();
-        $challenges = [
-            [
-                'id' => 1,
-                'title' => 'Challenge di Esempio',
-                'description' => 'Questa è una challenge di esempio per mostrarti come funziona l\'applicazione.',
-                'created_at' => '2026-09-06'
-            ],
-            [
-                'id' => 2,
-                'title' => 'Un\'altra Challenge',
-                'description' => 'Ecco un\'altra challenge di esempio per mostrati l\'interfaccia.',
-                'created_at' => '2026-09-05'
-            ]
-        ];
+        $challenges = getChallengesByUser((int) $user['id']);
 
         include __DIR__ . '/../Views/dashboard.php';
     }
