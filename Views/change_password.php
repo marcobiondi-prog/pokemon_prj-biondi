@@ -1,5 +1,11 @@
-<?php $title = 'Cambia Password - Challenge App'; require __DIR__ . '/layouts/header.php'; ?>
+<?php $title = 'Cambia Password - Challenge App'; $hideNavUserMenu = true; require __DIR__ . '/layouts/header.php'; ?>
         <div class="profile-container" style="max-width: 600px; margin: 0 auto;">
+            <div class="dex-topbar">
+                <div class="dex-tab dex-tab-user">
+                    <?php include __DIR__ . '/layouts/account-tab.php'; ?>
+                </div>
+            </div>
+
             <h2>Cambia Password</h2>
             <p style="color: #666; margin-bottom: 30px;">Aggiorna la tua password di accesso</p>
 

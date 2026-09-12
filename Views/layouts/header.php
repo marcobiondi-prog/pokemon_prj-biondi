@@ -7,14 +7,14 @@ $navUser = function_exists('getCurrentUser') ? getCurrentUser() : null;
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title><?php echo htmlspecialchars($title ?? 'Challenge App'); ?></title>
-    <link rel="stylesheet" href="/pokemon/lan_challenge-/assets/css/style.css?v=26">
+    <link rel="stylesheet" href="/pokemon/lan_challenge-/assets/css/style.css?v=29">
 </head>
 <body>
     <div class="pokedex-frame">
     <div class="pokedex-body">
     <nav class="navbar">
         <div class="container">
-            <?php if ($navUser): ?>
+            <?php if ($navUser && empty($hideNavUserMenu)): ?>
                 <div class="user-menu">
                     <button type="button" class="user-menu-toggle">
                         <span class="user-avatar"><?php echo htmlspecialchars(strtoupper(substr($navUser['name'] ?? 'U', 0, 1))); ?></span>
@@ -49,7 +49,7 @@ $navUser = function_exists('getCurrentUser') ? getCurrentUser() : null;
                         </a>
                     </div>
                 </div>
-            <?php else: ?>
+            <?php elseif (!$navUser): ?>
                 <ul class="nav-menu">
                     <li><a href="/pokemon/lan_challenge-/public/?url=login">Login</a></li>
                     <li><a href="/pokemon/lan_challenge-/public/?url=register">Register</a></li>

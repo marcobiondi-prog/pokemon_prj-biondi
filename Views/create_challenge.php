@@ -1,5 +1,11 @@
-<?php $title = 'Crea Challenge - Challenge App'; require __DIR__ . '/layouts/header.php'; ?>
+<?php $title = 'Crea Challenge - Challenge App'; $hideNavUserMenu = true; require __DIR__ . '/layouts/header.php'; ?>
         <div class="challenge-form">
+            <div class="dex-topbar">
+                <div class="dex-tab dex-tab-user">
+                    <?php include __DIR__ . '/layouts/account-tab.php'; ?>
+                </div>
+            </div>
+
             <h2>Crea una Nuova Challenge</h2>
 
             <form method="POST" action="?url=challenges/store" class="form">
