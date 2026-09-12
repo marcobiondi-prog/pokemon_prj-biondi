@@ -71,4 +71,33 @@ class ChallengeController
         header('Location: ?url=');
         exit;
     }
+
+    public function delete()
+    {
+        if (!isLoggedIn()) {
+            header('Location: ?url=login');
+            exit;
+        }
+
+        $user = getCurrentUser();
+        $challengeId = (int) ($_POST['challenge_id'] ?? 0);
+        $challenge = findChallengeById($challengeId);
+
+        $isInvolved = $challenge && (
+            (int) $challenge['challenger_id'] === (int) $user['id']
+            || (int) $challenge['challenged_id'] === (int) $user['id']
+        );
+
+        if (!$isInvolved) {
+            $_SESSION['error'] = 'Impossibile eliminare questa challenge';
+            header('Location: ?url=');
+            exit;
+        }
+
+        deleteChallenge($challengeId);
+
+        $_SESSION['success'] = 'Challenge eliminata con successo!';
+        header('Location: ?url=');
+        exit;
+    }
 }

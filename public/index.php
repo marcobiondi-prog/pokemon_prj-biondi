@@ -23,6 +23,11 @@ $router->add('GET', 'register', 'AuthController@showRegister');
 $router->add('POST', 'register', 'AuthController@register');
 $router->add('GET', 'logout', 'AuthController@logout');
 
+// Rotte Login Social (placeholder, pronte per l'integrazione OAuth)
+$router->add('GET', 'auth/google', 'AuthController@loginWithGoogle');
+$router->add('GET', 'auth/github', 'AuthController@loginWithGithub');
+$router->add('GET', 'auth/facebook', 'AuthController@loginWithFacebook');
+
 // Rotte Password Reset
 $router->add('GET', 'forgot-password', 'ForgotPasswordController@show');
 $router->add('POST', 'forgot-password', 'ForgotPasswordController@handleRequest');
@@ -41,6 +46,7 @@ $router->add('POST', 'user/change-password', 'UserController@changePassword');
 $router->add('GET', 'challenges/create', 'ChallengeController@create');
 $router->add('POST', 'challenges/store', 'ChallengeController@store');
 $router->add('POST', 'challenges/accept', 'ChallengeController@accept');
+$router->add('POST', 'challenges/delete', 'ChallengeController@delete');
 
 // Esecuzione Request
 $url = $_GET['url'] ?? '';

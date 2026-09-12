@@ -211,4 +211,31 @@ class AuthController
         header('Location: ?url=login');
         exit;
     }
+
+    public function loginWithGoogle()
+    {
+        $this->socialLoginPlaceholder('Google');
+    }
+
+    public function loginWithGithub()
+    {
+        $this->socialLoginPlaceholder('GitHub');
+    }
+
+    public function loginWithFacebook()
+    {
+        $this->socialLoginPlaceholder('Facebook');
+    }
+
+    /**
+     * Placeholder per il login social: l'integrazione OAuth reale richiede
+     * un Client ID/Secret registrato sul portale sviluppatori del provider.
+     * Sostituire con il flusso OAuth (redirect + callback) quando disponibile.
+     */
+    private function socialLoginPlaceholder(string $provider): void
+    {
+        $_SESSION['info'] = "Il login con {$provider} sarà disponibile a breve.";
+        header('Location: ?url=login');
+        exit;
+    }
 }

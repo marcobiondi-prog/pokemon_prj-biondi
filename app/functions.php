@@ -181,6 +181,23 @@ function updateChallenge(int $challengeId, array $changes): bool
     return false;
 }
 
+function deleteChallenge(int $challengeId): bool
+{
+    $challenges = getAllChallenges();
+    $remaining = array_values(array_filter(
+        $challenges,
+        fn($challenge) => (int) $challenge['id'] !== $challengeId
+    ));
+
+    if (count($remaining) === count($challenges)) {
+        return false;
+    }
+
+    file_put_contents(getChallengesFilePath(), json_encode($remaining, JSON_PRETTY_PRINT));
+
+    return true;
+}
+
 function findChallengeById(int $challengeId): ?array
 {
     foreach (getAllChallenges() as $challenge) {

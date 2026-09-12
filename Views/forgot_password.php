@@ -1,23 +1,4 @@
-<!DOCTYPE html>
-<html lang="it">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Password Dimenticata - Challenge App</title>
-    <link rel="stylesheet" href="/pokemon/lan_challenge-/assets/css/style.css?v=8">
-</head>
-<body>
-    <nav class="navbar">
-        <div class="container">
-            <a href="/pokemon/lan_challenge-/public/"><img src="/pokemon/lan_challenge-/assets/img/logo.png?v=1" alt="Challenge App" class="navbar-brand"></a>
-            <ul class="nav-menu">
-                <li><a href="/pokemon/lan_challenge-/public/?url=login">Login</a></li>
-                <li><a href="/pokemon/lan_challenge-/public/?url=register">Register</a></li>
-            </ul>
-        </div>
-    </nav>
-
-    <main class="container">
+<?php $title = 'Password Dimenticata - Challenge App'; require __DIR__ . '/layouts/header.php'; ?>
         <div class="auth-container">
             <div class="auth-card">
                 <h2>Password Dimenticata</h2>
@@ -49,12 +30,4 @@
                 </p>
             </div>
         </div>
-    </main>
-
-    <footer class="footer">
-        <div class="container">
-            <p>&copy; 2026 Challenge App. All rights reserved.</p>
-        </div>
-    </footer>
-</body>
-</html>
+<?php require __DIR__ . '/layouts/footer.php'; ?>

@@ -2,7 +2,7 @@
     {
         "id": 1,
         "title": "Challenge di Esempio",
-        "description": "Questa è una challenge di esempio per mostrarti come funziona l'applicazione.",
+        "description": "Questa \u00e8 una challenge di esempio per mostrarti come funziona l'applicazione.",
         "challenger_id": 1,
         "challenged_id": 4,
         "status": "pending",
